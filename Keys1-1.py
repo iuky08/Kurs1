@@ -1,10 +1,4 @@
-def calculate_factorial(n):
-    if n == 0 or n == 1:
-        return 1
-    factorial = 1
-    for i in range(2, n + 1):
-        factorial *= i
-    return factorial
+import math
 
 def main():
     while True:
@@ -14,7 +8,7 @@ def main():
             if number < 0:
                 print("Пожалуйста, введите положительное число.")
             else:
-                result = calculate_factorial(number)
+                result = math.factorial(number)
                 print(f"Факториал числа {number} равен {result}")
                 break
         except ValueError:
