@@ -1,0 +1,163 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Шапка */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    text-align: left;
+    position: relative;
+}
+
+header .logo {
+    width: 150px;
+    height: 32px;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    margin-left: 20px;
+}
+
+/* Основной контент */
+main {
+    flex: 1;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Центрирование */
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Форма */
+form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+form label {
+    flex: 0 0 15%;
+}
+
+form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #d8232a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #bf1e23;
+}
+
+/* Сообщение */
+.message-box {
+    background-color: #ffdddd;
+    color: #d8000c;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d8000c;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message-box button {
+    background: none;
+    border: none;
+    color: #d8000c;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Список задач */
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+ul li {
+    background-color: #e6f7ff;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul li .created-at {
+    margin-right: 10px;
+    font-size: 0.9em;
+    color: #888;
+    width: 120px;
+}
+
+ul li .task {
+    flex: 1;
+    padding: 0 10px;
+}
+
+ul li .delete-btn {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+ul li .delete-btn:hover {
+    text-decoration: underline;
+}
+
+/* Подвал */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    flex-shrink: 0;
+}

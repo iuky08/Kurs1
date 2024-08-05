@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планировщик</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <script>
+        function validateForm() {
+            var task = document.getElementById("task").value.trim();
+            if (task == "") {
+                alert("Задача не может быть пустой");
+                return false;
+            }
+            return true;
+        }
+
+        function closeMessage() {
+            document.getElementById("message-box").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+            <h1>Планировщик студента Синергии</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container centered">
+            <form method="POST" action="/add">
+                <label for="task">Задача</label>
+                <input type="text" id="task" name="task">
+                <button type="submit">Добавить</button>
+            </form>
+            {% if message %}
+            <div id="message-box" class="message-box">
+                <span>{{ message }}</span>
+                <button onclick="closeMessage()">Закрыть</button>
+            </div>
+            {% endif %}
+            <ul>
+                {% for task in tasks %}
+                <li>
+                    <span class="created-at">{{ task[2] | datetimeformat }}</span>
+                    <span class="task">{{ task[1] }}</span>
+                    <a href="/delete/{{ task[0] }}" class="delete-btn">Удалить</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ежедневник студента Синергии by Федощук Роман</p>
+        </div>
+    </footer>
+</body>
+</html>
